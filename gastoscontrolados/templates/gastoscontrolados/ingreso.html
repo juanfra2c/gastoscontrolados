@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>Ingresos</title>
+</head>
+<body>
+    <h1>Ingreso</h1>
+    <form action="." method="POST">
+    {% csrf_token %}
+        <table>
+            {{ formIng.as_table }}
+        </table>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+     <h1>Gastos</h1>
+    <form action="." method="POST">
+    {% csrf_token %}
+        <table>
+            {{ formGas.as_table }}
+        </table>
+        <p><input type="submit" value="Submit"></p>
+    </form>
+    {% for ing in ingresos %}
+        <div>
+            <p><a href="">{{ ing.concepto }}</a>
+            Fecha: {{ ing.fecha }}
+            Importe: {{ ing.importe }}
+            {{ ing.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+     {% for gas in gastos %}
+        <div>
+            <p><a href="">{{ gas.concepto }}</a>
+            Fecha: {{ gas.fecha }}
+            Importe: {{ gas.importe }}
+            {{ gas.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
