@@ -2,27 +2,35 @@
 <html lang="en">
 <head>
     <title>Ingresos</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 </head>
 <body>
+<table class="table table-bordered">
+<td>
     <h1>Ingreso</h1>
     <form action="." method="POST">
     {% csrf_token %}
-        <table>
+        <table class="table table-condensed">
             {{ formIng.as_table }}
         </table>
-        <p><input type="submit" value="Submit"></p>
+        <p><input type="submit" class="btn btn-primary btn-sm" value="Guardar" name="ing_save"></p>
     </form>
-     <h1>Gastos</h1>
+    </td>
+    <td>
+    <h1>Gastos</h1>
     <form action="." method="POST">
     {% csrf_token %}
-        <table>
+        <table class="table table-condensed">
             {{ formGas.as_table }}
         </table>
-        <p><input type="submit" value="Submit"></p>
+        <p><input type="submit" class="btn btn-primary btn-sm" value="Guardar" name="gastos_save"></p>
     </form>
+    </td>
+    </table>
     {% for ing in ingresos %}
         <div>
-            <p><a href="">{{ ing.concepto }}</a>
+            <p class="list-group-item"><a href="">{{ ing.concepto }}</a>
             Fecha: {{ ing.fecha }}
             Importe: {{ ing.importe }}
             {{ ing.text|linebreaksbr }}</p>
@@ -30,7 +38,7 @@
     {% endfor %}
      {% for gas in gastos %}
         <div>
-            <p><a href="">{{ gas.concepto }}</a>
+            <p class="list-group-item"><a href="">{{ gas.concepto }}</a>
             Fecha: {{ gas.fecha }}
             Importe: {{ gas.importe }}
             {{ gas.text|linebreaksbr }}</p>
