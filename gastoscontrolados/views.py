@@ -13,6 +13,9 @@ def index(request):
 def vgastos(request, gastos_id):
     return HttpResponse("You're looking at question %s." % gastos_id)
 
+def vconfiguracion(request):
+    return render(request, 'gastoscontrolados/configuracion.html', {})
+
 def vingresos(request):
     ingresos_all = Ingresos.objects.order_by('fecha')
     gastos_all = Gastos.objects.order_by('fecha')

@@ -7,4 +7,5 @@ urlpatterns = [
     url(r'^(?P<question_id>[0-9]+)/gastos/$', views.vgastos, name='vgastos'),
     # ex: /polls/5/results/
     url(r'^ingresos/$', views.vingresos, name='vingresos'),
+    url(r'^configuracion/$', views.vconfiguracion, name='vconfiguracion'),
 ]

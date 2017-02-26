@@ -1,79 +1,7 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html lang="en">
-<head>
-    <title>Gastos Controlados</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-        .carousel-inner > .item > img,
-        .carousel-inner > .item > a > img {
-        width: 33%;
-        margin: auto;
-        }
-  </style>
-    
-</head>
+{% extends 'gastoscontrolados/base.html' %}
+{% block content %}
+
 <body>
- <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-        <!-- Carousel indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>   
-        <!-- Wrapper for carousel items -->
-        {% load static %}
-        <div class="carousel-inner">
-            <div class="active item">
-                <img src="{% static "gastoscontrolados/imagen1.jpg" %}" alt="First Slide">
-                <div class="carousel-caption">
-                  <h3>First slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static "gastoscontrolados/imagen1.jpg" %}" alt="Second Slide">
-                <div class="carousel-caption">
-                  <h3>Second slide label</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="{% static "gastoscontrolados/imagen1.jpg" %}" alt="Third Slide">
-                <div class="carousel-caption">
-                  <h3>Third slide label</h3>
-                  <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
-            </div>
-        </div>
-        <!-- Carousel controls -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-        </a>
-    </div>
-
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Gastos Controlados</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Ingresos/Gastos</a></li>
-      <li><a href="#">Listado</a></li>
-      <li><a href="#">Graficas</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav>
-
 <table class="table table-bordered">
 <td>
     <h1>Ingreso</h1>
@@ -120,6 +48,5 @@
     {% endfor %}
     </td>
     </table>
-    
 </body>
-</html>
+{% endblock content %}
